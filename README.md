@@ -57,6 +57,32 @@
 
 All devices use radio group **108** for communication. Devices on the same radio group will communicate with each other.
 
+## State Machine
+
+The following state machine diagram illustrates the sequencing of states for both player and host modes:
+
+```mermaid
+stateDiagram-v2
+    [*] --> PlayerIdle
+    [*] --> HostIdle
+
+    PlayerIdle --> PlayerSettingDevice : Long press logo
+    PlayerSettingDevice --> PlayerIdle : Show number
+
+    PlayerIdle --> PlayerWaiting : Receive challenge
+    PlayerWaiting --> PlayerFeedback : Press button
+    PlayerFeedback --> PlayerIdle : Show icon
+
+    HostIdle --> HostSettingDevices : Long press logo
+    HostSettingDevices --> HostIdle : Show number
+
+    HostIdle --> HostRunning : Press A
+    HostRunning --> HostResults : 15s elapsed
+    HostResults --> HostIdle : Show results
+
+    PlayerIdle --> HostIdle : Long press A+B (3s)
+```
+
 ## Use as Extension
 
 This repository can be added as an **extension** in MakeCode.
