@@ -3,7 +3,7 @@
 
 ## Overview
 
-**DB Drill Multi V3** is a classification drill game for BBC MicroBit devices that measures reaction time and accuracy across multiple participants. The program supports a host/participant architecture where one device acts as the controller and multiple devices act as players attempting to classify items quickly and accurately.
+**DB Drill Multi V3** is a classification drill game for BBC MicroBit devices that measures reaction time and accuracy across multiple participants. The program supports a host/player architecture where one device acts as the host and multiple devices act as players attempting to classify items quickly and accurately.
 
 ## How It Works
 
